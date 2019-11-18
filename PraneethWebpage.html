@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="description" content="width=device-width">
+		<link rel="stylesheet" href="./PraneethStyles.css"/>
+		<title>Praneeth's Webpage</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+		<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">
+		<script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script>
+		$(document).ready(function(){
+		$("button").click(function(){
+		$("#div1").fadeIn();
+		$("#div2").fadeIn("slow");
+		$("#div3").fadeIn(3000);
+		});
+		});
+		</script>
+	</head>
+	<body lang="en-US" class="praneethStyle">
+		<p class="paraColor fontVerdana" style="font-size:100%;text-align:right;position:relative;right:10px">
+		<b>Date:</b><span id="datetime"></span></p>
+		<script>var dt = new Date();
+		document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+		</script>
+		<marquee direction="right" behavior="alternate" 
+		style="font-size:600%;font-family:verdana;color:#00FA9A;"><b><u><i>
+		P<sub>raneeth's</sub></i></u>
+		</b> <b><u><i>W<sub>eb</sub></b></u></i> <b><u><i>P<sub>age</sub>
+		</i></u></b></marquee>
+		<p>
+		<span class="paraColor sizeTotal" title="Hey,Check-Out the Links Below!">Hi,my name is Praneeth!And this, is my webpage!</span></p>
+		<div class="dropdown">
+			<button class="dropbtn button">These are all my links!</button>
+			<div class="dropdown-content">
+				<a href="https://www.youtube.com/channel/UCfzq01bv0frwOgSRkKccxXw" 
+				class="colorBlue sizeTotal fontVerdana"style="color:#40E0D0;font-size:200%;
+				font-family:verdana;" target="_blank">
+				This is my youtube channel</a>
+				<a href="https://sites.google.com/prod/view/praneeth-dreamcontrollers/home" 
+				class="colorMG sizeTotal fontVerdana"style="color:#EFC10B;font-size:200%;
+				font-family:verdana;" target="_blank">
+				This is one of my Google Sites,Dream Controllers</a>
+				<a href="https://twitch.tv/przodium" class="sizeTotal" style="color:#5500FF;" target="_blank">
+				This is my Twitch</a>
+				<a class="w3-container w3-teal" href="https://docs.google.com/document/d/e/2PACX-1vTS5cQSRN_
+				i5P2BzUdiW9LHrydhoBJ7irzlCUTdyiuma8g96GODTwmI9O6HhuqyjN_BlsfxMv3e4p2f/pub"
+				class="sizeTotal" style="color:white" target="_blank">
+				This is a link to all the Alt Codes</a>
+				<a class="text-muted" href="https://docs.google.com/document/d/e/2PACX-1vRCdUqYASOxD7Y0iWrZSney
+				SsmGsUbk1Y
+				_dmBmfzgpsYhp3MS0BvGNiapFE4k-GzO4n-HmXLINTXUcZ/pub" 
+				class="sizeTotal" target="_blank">
+				This is a Link to All the Percent Codes</a>
+				<a href="https://www.tumblr.com/blog/przodium" class="sizeTotal" style="color:#40E0D0;" target="_blank">
+				This is my Tumblr
+				</a>
+			</div>
+		</div>
+		<div class="box"></div>
+		<p>
+			<span style="color:red;font-family:impact;font-size:400%;">Warning:</span><br>
+			<span class="noCursor sizeTotal hc"style="color:yellow">If You Put Your Mouse Cursor Over This Text, Your Mouse Cursor Will Dissappear!</span>
+		</p>
+		<praneethMashetty class="praneethMashetty">
+			This is made with the Praneeth-Mashetty Tag/Element!
+		</praneethMashetty>
+		<br>
+		    <div id="gamepadPrompt" style="color:white;font-size:200%;"></div>
+ 
+    <script>
+    var hasGP = false;
+ 
+    function canGame() {
+        return "getGamepads" in navigator;
+    }
+ 
+    $(document).ready(function() {
+ 
+        if(canGame()) {
+ 
+            var prompt = "Now connect your gamepad/controller to your pc and do anything with your controller, for example, press a button, or move the analog sticks, or even press the shoulder buttons!And I can tell.";
+            $("#gamepadPrompt").text(prompt);
+ 
+            $(window).on("gamepadconnected", function() {
+                hasGP = true;
+                $("#gamepadPrompt").html("You connected it!");
+                console.log("connection event");
+            });
+ 
+            $(window).on("gamepaddisconnected", function() {
+                console.log("disconnection event");
+                $("#gamepadPrompt").text(prompt);
+            });
+ 
+            var checkGP = window.setInterval(function() {
+                if(navigator.getGamepads()[0]) {
+                    if(!hasGP) $(window).trigger("gamepadconnected");
+                    window.clearInterval(checkGP);
+                }
+            }, 500);
+        }
+ 
+    });
+    </script>
+	<button onclick="typeWriter()" style="backgound-color:40E0D0;border-radius:10px;cursor:pointer;font-size:25px;">You Will Learn Something by pressing this button</button>
+
+<p id="demo" style="color:#00FF33;font-size:150%"></p>
+
+	<script>
+		var i = 0;
+		var txt = '1+1=2';
+		var speed = 130;
+
+		function typeWriter() {
+		if (i < txt.length) {
+		document.getElementById("demo").innerHTML += txt.charAt(i);
+		i++;
+		setTimeout(typeWriter, speed);
+		}
+	  }
+	</script>
+	<script>
+		function goBack() {
+	   window.history.back()
+	}
+	</script>
+	<script>
+	 function goForward() {
+	  window.history.forward()
+	}
+	</script>
+	<script>
+		function refreshPage(){
+		window.location.reload();
+		} 
+	</script>
+	
+	<button onclick="myOS()">Click Me!</button>
+
+	<p id="demo1"></p>
+	
+			<script>
+			function myOS() {
+
+		var x = "Your Operating System is " + navigator.platform;
+			document.getElementById("demo1").innerHTML = x;
+		}
+		</script>
+	<button type="submit"  onClick="goBack()" style="background-color:EFC10B;border-radius:10px;cursor:pointer;font-size:25px;">Back</button>
+	<button type="submit"  onClick="goForward()" style="background-color:EFC10B;border-radius:10px;cursor:pointer;font-size:25px;">Forward</button>
+	<button type="submit"  onClick="refreshPage()" style="background-color:EFC10B;border-radius:10px;cursor:pointer;font-size:25px;">Refresh</button><br><br>
+	<code style="color:lightgreen;text-shadow: -2px -3px skyblue;">Click the thing below me!</code><br>
+	<input type="button" onclick="alert('Have a nice day!')" style="cursor:url('PM.cur'),auto;"/><br>
+	
+	<p class="paraColor">Sources:The Verge(Intel and Nvidia) UltraGamerz(AMD)</p>
+
+	<section>
+		<img class="mySlides" src="intel.jpg" style="width:50%">
+		<img class="mySlides" src="AMD.jpg" style="width:50%">
+		<img class="mySlides" src="nvidia.jpg" style="width:50%">
+	</section>
+
+	<script>
+		var myIndex = 0;
+		carousel();
+
+		function carousel() {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		for (i = 0; i < x.length; i++) {
+		x[i].style.display = "none";
+	}
+		myIndex++;
+		if (myIndex > x.length) {myIndex = 1}
+		x[myIndex-1].style.display = "block";
+		setTimeout(carousel, 3000);
+	}
+	</script>
+	
+	<div class="blocker"></div>
+        <div id="popup">
+                Popper.js Pop-Up
+        </div>
+        <button id="button-a">button</button>
+        <div class="blocker"></div>
+        
+</div>
+<script>
+        var ref = $('#button-a');        
+        var popup = $('#popup');
+        popup.hide();
+        
+        ref.click(function(){
+                popup.show(); 
+                var popper = new Popper(ref,popup,{
+                        placement: 'top',
+                        onCreate: function(data){
+                                console.log(data);
+                        },
+                        modifiers: {
+                                flip: {
+                                        behavior: ['left', 'right', 'top','bottom']
+                                },
+                                offset: { 
+                                        enabled: true,
+                                        offset: '0,10'
+                                }
+                        }
+                });
+        });
+</script>
+	
+		<button>Click me</button><br>
+
+	<div id="div1" style="width:80px;height:80px;display:none;background-color:orange;"></div><br>
+	<div id="div2" style="width:80px;height:80px;display:none;background-color:lightgreen;"></div><br>
+	<div id="div3" style="width:80px;height:80px;display:none;background-color:skyblue;"></div>
+		
+	
+		
+	<div>
+	<p class="colorMG">An actual GIF:</p>
+	<img src="Binary.gif"/>
+	<p class="colorBlue">A custom made one with HTML(marquee):</p>
+	<marquee direction="down" style="background-color:black;color:green;" scrollamount="15" width="20px" height="100px"">111<br>000<br>010<br>101<br>010<br>010<br>101<br>010<br>001<br>001<br>001<br>101<br>100<br>100<br>111<br>110<br>100<br>100<br>0111<br>000<br>010<br>101<br>010<br>010<br>101<br>010<br>001<br>001<br>001<br>101<br>100<br>100<br>111<br>110<br>100<br>100<br>0</marquee>
+	<marquee direction="down" style="background-color:black;color:green;" scrollamount="10" width="20px" height="100px"">101<br>000<br>0010<br><br101<br>010<br>101<br>010<br>100<br>110<br>010<br>101<br>001<br>001<br>010<br>101<br>010<br>010<br>100111<br>000<br>010<br>101<br>010<br>010<br>101<br>010<br>001<br>001<br>001<br>101<br>100<br>100<br>111<br>110<br>100<br>100<br>0</marquee>
+	<marquee direction="down" style="background-color:black;color:green;" scrollamount="15" width="20px" height="100px"">00<br>010<br>010<br>111<br>1000<br>0010<br>100<br>1010<br>010<br>1010<br>101<br>0101<br>0100<br>101<br>0101<br>0101<br>111<br>000<br>010<br>101<br>010<br>010<br>101<br>010<br>001<br>001<br>001<br>101<br>100<br>100<br>111<br>110<br>100<br>100<br>0</marquee>
+	<marquee direction="down" style="background-color:black;color:green;" scrollamount="20" width="20px" height="100px"">00<br>101<br>001<br>011<br>111<br>100<br>00<br>000<br>10<br>001<br>00<br>100<br>000<br>1<br>00<br>00<br>100<br>111<br>01<br>0001<br>011111<br>000<br>010<br>101<br>010<br>010<br>101<br>010<br>001<br>001<br>001<br>101<br>100<br>100<br>111<br>110<br>100<br>100<br>0</marquee>
+	<marquee direction="down" style="background-color:black;color:green;" scrollamount="25" width="20px" height="100px"">100<br>001<br>010<br>010<br>1010100<br>1001<br>0101<br>010<br>0101<br>01<br>0010<br>010<br>01001<br>010<br>1010<br>111<br>000<br>010<br>101<br>010<br>010<br>101<br>010<br>001<br>001<br>001<br>101<br>100<br>100<br>111<br>110<br>100<br>100<br>0</marquee>
+	</div>
+	
+	<script>
+	document.onkeyup = function(e) {
+		if (e.shiftKey && e.which == 80) {
+			alert("I am surprised you listened to me.");
+		}
+		if (e.altKey && e.which == 77) {
+			alert("I can not believe that you did it.");
+		}
+	};
+	</script>
+	<p class="sizeTotal"> Press Shift+P, and then press Alt+M</p>
+
+
+	</body>
+</html>
